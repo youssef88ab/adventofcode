@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DayThreePartOne {
+public class DayThreePartTwo {
     public static void main(String[] args) throws FileNotFoundException {
 
         // Variables
@@ -23,12 +23,21 @@ public class DayThreePartOne {
 
 
         for (String s : arr) {
-            int max = 0;
-            for (int i = 0; i < s.length() - 1 ; i++) {
-                for (int j = i + 1 ; j < s.length()  ; j++ ) {
-                    int value = (s.charAt(i) - '0') * 10 + (s.charAt(j) - '0');
-                    if (value > max) max = value;
+            int var1 ;
+            int var2 ;
+            int var3 ;
+            long max = 0;
+            int temp = s.length() - 12 ;
+
+            for (int i = 0 ; i < s.length() ; i++) {
+                long num = 0 ;
+                for (int j = i ; j < s.length() ; j++ ) {
+                    var1 = (s.charAt(i) - '0');
+                    var2 = (s.charAt(i + 1) - '0');
+                    var3 = (s.charAt(i + 2) - '0');
+                    num += value * 10 ;
                 }
+                if (num > max) {max = num;}
             }
             result += max;
         }
